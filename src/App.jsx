@@ -42,8 +42,10 @@ const CardReveal = ({ children, index = 0 }) => (
     initial={{ opacity: 0, y: 100 }}
     whileInView={{ opacity: 1, y: 0 }}
     whileHover={{ y: -8, scale: 1.02 }}
+    whileTap={{ y: -4, scale: 1.01 }}
     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
     viewport={{ once: true, amount: 0.2 }}
+    style={{ touchAction: 'manipulation', cursor: 'pointer' }}
   >
     {children}
   </motion.div>
@@ -61,7 +63,7 @@ const StaggerContainer = ({ children }) => (
 )
 
 const StaggerItem = ({ children }) => (
-  <motion.div variants={itemVariants}>
+  <motion.div variants={itemVariants} whileTap={{ scale: 0.98 }} style={{ touchAction: 'manipulation' }}>
     {children}
   </motion.div>
 )
@@ -127,9 +129,9 @@ export default function App() {
         )}
       </header>
 
-<main style={{ paddingTop: 20 }}>
+<main style={{ paddingTop: 0 }}>
         {/* Hero */}
-        <section id="home" className="hero" style={{ minHeight: '68px', padding: '0 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+        <section id="home" className="hero" style={{ padding: '0 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', position: 'relative', overflow: 'hidden' }}>
     <div className="absolute-bg" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
             <div className="blob blob-gold" style={{ position: 'absolute', width: 320, height: 320, borderRadius: '50%', filter: 'blur(48px)', opacity: 0.12, background: '#d4944f', right: -80, top: -120 }} />
             <div className="blob blob-cyan" style={{ position: 'absolute', width: 320, height: 320, borderRadius: '50%', filter: 'blur(48px)', opacity: 0.12, background: '#06b6d4', left: -80, bottom: 0 }} />
@@ -162,7 +164,7 @@ export default function App() {
         </section>
 
         {/* About */}
-        <section id="about" className="panel" style={{ padding: '80px 20px', maxWidth: 1200, margin: '0 auto' }}>
+        <section id="about" className="panel" style={{ padding: '40px 20px', maxWidth: 1200, margin: '0 auto', marginTop: 0 }}>
           <SectionReveal>
             <h2 style={{ fontSize: 40, fontWeight: 700, marginBottom: 32, textAlign: 'center' }}>About <span style={{ background: 'linear-gradient(90deg,#06b6d4,#d4944f)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Me</span></h2>
           </SectionReveal>
@@ -212,8 +214,9 @@ export default function App() {
               { title: 'Tools', icon: 'fas fa-wrench', color: '#06b6d4', skills: [{ icon: 'fas fa-chart-bar', label: 'Power BI' }, { icon: 'fas fa-th', label: 'Excel' }, { icon: 'fab fa-git-alt', label: 'Git & GitHub' }, { icon: 'fas fa-book', label: 'Jupyter' }] }
             ].map((cat, i) => (
               <CardReveal key={i} index={i}>
-                <div style={{ background: 'rgba(61,47,47,0.4)', border: `1px solid rgba(${cat.color === '#d4944f' ? '212,148,79' : '6,182,212'},0.2)`, padding: 24, borderRadius: 12, height: '100%' }}>
-                  <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#d4944f' }}><i className={cat.icon} style={{marginRight: 8, color: '#d4944f', fontSize: 24}} />{cat.title}</h3>
+                <div style={{ background: 'rgba(61,47,47,0.4)', border: `1px solid rgba(${cat.color === '#d4944f' ? '212,148,79' : '6,182,212'},0.2)`, padding: 24, borderRadius: 12, height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                  <i className={cat.icon} style={{ fontSize: 48, color: cat.color, marginBottom: 12 }} />
+                  <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: cat.color }}>{cat.title}</h3>
                   <StaggerContainer>
                     {cat.skills.map((s, si) => (
                       <StaggerItem key={si}>
@@ -300,7 +303,9 @@ export default function App() {
                     <div style={{display:'flex',gap:6,flexWrap:'wrap',marginBottom:12}}>
                       {p.tags.map((t,ti) => <span key={ti} style={{fontSize:11,padding:'4px 10px',borderRadius:16,background:'rgba(212,148,79,0.15)',color:'#d4944f'}}>{t}</span>)}
                     </div>
-                    <a href={p.github} target="_blank" rel="noopener noreferrer" style={{display:'inline-block',padding:'8px 16px',fontSize:12,fontWeight:600,background:'linear-gradient(90deg,#06b6d4,#d4944f)',color:'#1f2937',borderRadius:6,textDecoration:'none',transition:'all 0.3s',cursor:'pointer'}} onMouseEnter={(e)=>e.target.style.transform='translateY(-2px)'} onMouseLeave={(e)=>e.target.style.transform='translateY(0)'}>View on GitHub →</a>
+                    <a href={p.github} target="_blank" rel="noopener noreferrer" style={{display:'inline-block',padding:'8px 16px',fontSize:12,fontWeight:600,background:'linear-gradient(90deg,#06b6d4,#d4944f)',color:'#1f2937',borderRadius:6,textDecoration:'none',transition:'transform 0.18s ease',cursor:'pointer'}}>
+                      View on GitHub →
+                    </a>
                   </div>
                 </div>
               </CardReveal>
