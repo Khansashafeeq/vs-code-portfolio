@@ -128,8 +128,8 @@ export default function App() {
       </header>
 
 <main style={{ paddingTop: 20 }}>
-  {/* Hero */}
-  <section id="home" className="hero" style= {{ minHeight: '100svh',padding: '0 20px',display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'flex-start',position: 'relative', overflow: 'hidden' }}>
+        {/* Hero */}
+        <section id="home" className="hero" style={{ minHeight: '68px', padding: '0 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', position: 'relative', overflow: 'hidden' }}>
     <div className="absolute-bg" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
             <div className="blob blob-gold" style={{ position: 'absolute', width: 320, height: 320, borderRadius: '50%', filter: 'blur(48px)', opacity: 0.12, background: '#d4944f', right: -80, top: -120 }} />
             <div className="blob blob-cyan" style={{ position: 'absolute', width: 320, height: 320, borderRadius: '50%', filter: 'blur(48px)', opacity: 0.12, background: '#06b6d4', left: -80, bottom: 0 }} />
