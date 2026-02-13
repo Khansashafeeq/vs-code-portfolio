@@ -44,7 +44,3 @@ npm run preview
 ## Deploy
 - Recommended: Vercel or Netlify — connect the repo and deploy the `dist/` output from the build.
 - GitHub Pages (simple): use the `gh-pages` package or deploy from `dist/` via GitHub Actions.
-
-
--
-Made updates to improve mobile spacing and touch interactions. Test on a mobile device and tell me if you want any content or layout changes.
