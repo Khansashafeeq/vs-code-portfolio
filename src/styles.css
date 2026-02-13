@@ -63,5 +63,38 @@ input::placeholder,textarea::placeholder{color:rgba(200,180,160,0.5)}
 	.hero + .panel { padding-top: 0 !important; }
 }
 
+/* Responsive tweaks: reduce spacing between sections and scale header/profile on small screens */
+@media (max-width: 768px) {
+	/* Reduce overall section paddings so panels sit closer */
+	section { padding: 36px 14px !important; }
+	.panel { padding: 28px 12px !important; }
+
+	/* Hero specific spacing */
+	#home { padding: 48px 12px 24px !important; }
+	.hero-inner { padding-top: 8px !important; }
+
+	/* Header pill adjustments (override inline sizes) */
+	.vertical-name { font-size: 13px !important; }
+	.pill-center { padding: 8px 12px !important; font-size: 13px !important; }
+	.pill-right { width: 38px !important; height: 38px !important; font-size: 16px !important; }
+
+	/* Profile picture smaller on phones */
+	#about img { max-width: 320px !important; width: 90% !important; }
+
+	/* Reduce gaps between hero elements */
+	.hero-inner p, .hero-inner h1 { margin-bottom: 8px !important; }
+	.hero-inner p[style], .hero-inner h1[style] { margin-bottom: 8px !important; }
+}
+
+@media (max-width: 480px) {
+	section { padding: 28px 12px !important; }
+	#home { padding: 36px 12px 12px !important; }
+	.panel { padding: 20px 10px !important; }
+	.pill-center { font-size: 12px !important; padding: 6px 10px !important; }
+	.vertical-name { font-size: 12px !important; }
+	.pill-right { width: 36px !important; height: 36px !important; font-size: 15px !important; }
+	#about img { max-width: 260px !important; width: 86% !important; }
+}
+
 /* Make interactive elements respond on touch/active states */
 button:active, .glass-card:active, .pill-right:active, a:active { transform: translateY(0); }

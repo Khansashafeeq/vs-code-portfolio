@@ -100,14 +100,14 @@ export default function App() {
       <header className="site-header">
           <div className="pill" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           <div className="pill-left" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div className="vertical-name" style={{ fontSize: 14 }}>
+            <div className="vertical-name" style={{ fontSize: 18, fontWeight: 700 }}>
               <div>Khansa Shafeeq</div>
             </div>
           </div>
-          <div className="pill-center" style={{ padding: '10px 18px', background: 'linear-gradient(90deg,#06b6d4,#d4944f)', borderRadius: 20, color: '#1f2937', fontWeight: 600 }}>
+          <div className="pill-center" style={{ padding: '12px 20px', background: 'linear-gradient(90deg,#06b6d4,#d4944f)', borderRadius: 20, color: '#1f2937', fontWeight: 700, fontSize: 16 }}>
             <a href="#contact" style={{ color: 'inherit', textDecoration: 'none' }}>Hire Me</a>
           </div>
-          <div className="pill-right" style={{ width: 44, height: 44, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, cursor: 'pointer' }} onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="pill-right" style={{ width: 50, height: 50, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, cursor: 'pointer' }} onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? '✕' : '☰'}
           </div>
         </div>
@@ -131,20 +131,20 @@ export default function App() {
 
 <main style={{ paddingTop: 0 }}>
         {/* Hero */}
-        <section id="home" className="hero" style={{ padding: '0 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', position: 'relative', overflow: 'hidden' }}>
+        <section id="home" className="hero" style={{ padding: '120px 20px 40px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', position: 'relative', overflow: 'hidden' }}>
     <div className="absolute-bg" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
             <div className="blob blob-gold" style={{ position: 'absolute', width: 320, height: 320, borderRadius: '50%', filter: 'blur(48px)', opacity: 0.12, background: '#d4944f', right: -80, top: -120 }} />
             <div className="blob blob-cyan" style={{ position: 'absolute', width: 320, height: 320, borderRadius: '50%', filter: 'blur(48px)', opacity: 0.12, background: '#06b6d4', left: -80, bottom: 0 }} />
           </div>
 
-          <motion.div className="hero-inner" style={{ y: yHero, scale: scaleHero, textAlign: 'center', position: 'relative', zIndex: 2, maxWidth: 900 }}>
-            <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} style={{ fontSize: 14, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase', color: '#d4944f', marginBottom: 16 }}>Welcome to my portfolio</motion.p>
+          <motion.div className="hero-inner" style={{ y: yHero, scale: scaleHero, textAlign: 'center', position: 'relative', zIndex: 2, maxWidth: 900, paddingTop: 12 }}>
+            <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} style={{ fontSize: 16, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase', color: '#d4944f', marginBottom: 20 }}>Welcome to my portfolio</motion.p>
             
             <motion.h1 initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.2 }} style={{ fontSize: 'clamp(2.2rem, 7vw, 4.5rem)', lineHeight: 1.05, letterSpacing: -1, marginBottom: 12, color: '#f6ecd2' }}>
               Python Developer &{' '}<span style={{ background: 'linear-gradient(90deg,#06b6d4,#d4944f)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Data Analyst</span>
             </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.4 }} style={{ fontSize: 22, marginBottom: 16, color: '#efefef' }}>I'm <span style={{color:'#d4944f', fontWeight: 600}}>Khansa Shafeeq</span></motion.p>
+            <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.4 }} style={{ fontSize: 26, marginBottom: 16, color: '#efefef' }}>I'm <span style={{color:'#d4944f', fontWeight: 800, fontSize: 28}}>Khansa Shafeeq</span></motion.p>
 
             <motion.p initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.5 }} style={{ fontSize: 18, color: 'rgba(230,226,223,0.9)', maxWidth: 700, margin: '0 auto 32px' }}>
               Building scalable backend systems and transforming data into actionable insights.<br/>
@@ -171,12 +171,12 @@ export default function App() {
           <SectionReveal delay={0.2}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 40 }}>
               {/* Profile Picture - Centered */}
-              <motion.div
+                <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
-                style={{ position: 'relative', maxWidth: 350 }}
+                style={{ position: 'relative', maxWidth: 480 }}
               >
                 <img 
                   src="/images/profile.jpeg"
